@@ -5,6 +5,7 @@
     <% @products.each do |product| %>
       <div class="col-md-3">
         <div class="well">
+          <%= image_tag product.photo %>
           <h4> <%= product.name %> <small> (<%= product.category.try(:name) %>) </small></h4>
         <p> Precio: <%= product.price %> </p>
         <p> Stock: <%= product.stock %> </p>

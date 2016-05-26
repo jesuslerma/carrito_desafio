@@ -17,8 +17,10 @@ class ProductImageUploader < CarrierWave::Uploader::Base
   end
 
   def default_url
+
     "http://3.bp.blogspot.com/_9cdxyL6oh_c/TFd8k_XSdmI/AAAAAAAAAcc/6evAfC01GRM/s1600/Happy+funny+smile+face.jpg"
   end
+
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:
