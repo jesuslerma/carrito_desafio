@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :category_id %><br>
-    <%= f.text_field :category_id %>
+    <%= f.select( :category_id, Category.all.collect{|p| [p.name, p.id]}) %>
   </div>
   <div class="field">
     <%= f.label :price %><br>
@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :store_id %><br>
-    <%= f.text_field :store_id %>
+     <%= f.select( :store_id, Store.all.collect{|p| [p.name, p.id]}) %>
   </div>
   <div class="actions">
     <%= f.submit %>

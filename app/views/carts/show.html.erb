@@ -1,19 +1,25 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Total price:</strong>
-  <%= @cart.total_price %>
-</p>
-
-<p>
-  <strong>Open:</strong>
-  <%= @cart.open %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @cart.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
+<div class="col-md-6 col-md-offset-3"> 
+  <table class="table">
+    <thead> 
+      <tr>
+        <td>Producto</td>
+        <td>Precio</td>
+        <td>Seleccionado hace:</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cart.orders.each do |order| %>
+      <tr>
+        <td> <%= order.product.name %> </td>
+        <td> <%= order.product.price %> </td>
+        <td> <%= time_ago_in_words(order.created_at) %> </td>
+      </tr>
+      <% end %>
+      <tr class="success">
+        <td>  </td>
+        <td> Total: <%= @cart.total_price%></td>
+        <td> <a href="#" class="btn btn-primary"> Comprar </a> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
